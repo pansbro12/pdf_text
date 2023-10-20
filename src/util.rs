@@ -1,7 +1,7 @@
 use pathfinder_geometry::rect::RectF;
 use serde::{Serialize, Deserialize};
 
-
+///Checks whether all characters in span are digits
 pub fn is_number(s: &str) -> bool {
     s.len() > 0 && s.chars().all(|c| ('0' ..= '9').contains(&c))
 }
@@ -27,7 +27,7 @@ pub enum Tri {
     Unknown,
 }
 
-#[derive(Copy, Clone, Debug)]
+#[derive(Copy, Clone, Debug, PartialOrd, PartialEq)]
 #[derive(Serialize, Deserialize)]
 #[repr(C)]
 pub struct Rect {
